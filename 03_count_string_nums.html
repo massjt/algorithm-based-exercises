@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count String</title>
+</head>
+<body>
+    <!--
+        可以查看该问题，辅助理解: https://segmentfault.com/q/1010000008703575
+        统计字符串个数
+        如 str = 'abcddssfff';
+
+        返回:
+        {
+            a: 1,
+            b: 1,
+            c: 1,
+            d: 2,
+            f: 3,
+            s: 2
+        }
+
+    -->
+<script>
+    let str = "abcddssfff";
+    let arr = str.split('');
+
+    let res = arr.reduce((acc,cur) => {acc.hasOwnProperty(cur) ? acc[cur]++ : acc[cur] = 1;return acc;},{})
+    console.log(res)
+</script>
+</body>
+</html>
