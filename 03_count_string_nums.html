@@ -22,11 +22,31 @@
 
     -->
 <script>
+    /* one method */
     let str = "abcddssfff";
     let arr = str.split('');
 
     let res = arr.reduce((acc,cur) => {acc.hasOwnProperty(cur) ? acc[cur]++ : acc[cur] = 1;return acc;},{})
     console.log(res)
+
+    /* two method*/
+    function count_str(s)
+    {
+        let r = {},s = s.split('');
+        for (let i=0; i < s.length; i++) {
+            r[s[i]] = r[s[i]] ? r[s[i]]+1 : 1;
+        }
+        return r;
+    }
+    /* three methods */
+    function count_while_str(s)
+    {
+        let r = {},s = s.split(''),i = s.length;
+        while (--i) {
+            r[s[i]] = r[s[i]] ? r[s[i]]+1 : 1;
+        }
+        return r;
+    }
 </script>
 </body>
 </html>
